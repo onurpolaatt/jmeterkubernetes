@@ -20,11 +20,11 @@ do
  #create a config for slave
  cp jmeter-slave.yaml.bak $CONFIGPATH'slave'$COUNTER.yaml
  #modify values to slave
- sed -i "" -e 's/master/slave'$COUNTER'/g' $CONFIGPATH'slave'$COUNTER.yaml
+ sed -i -e "" 's/master/slave'$COUNTER'/g' $CONFIGPATH'slave'$COUNTER.yaml
  #update script name
- sed -i "" -e 's/JMXSCRIPT/'$script'/g' $CONFIGPATH'slave'$COUNTER.yaml
+ sed -i -e "" 's/JMXSCRIPT/'$script'/g' $CONFIGPATH'slave'$COUNTER.yaml
  #update datetime
- sed -i "" -e 's/DATETIME/'`date '+%Y-%m-%d_%H-%M-%S'`'/g' $CONFIGPATH'slave'$COUNTER.yaml
+ sed -i -e "" 's/DATETIME/'`date '+%Y-%m-%d_%H-%M-%S'`'/g' $CONFIGPATH'slave'$COUNTER.yaml
  #update persistance path
  sed -i 's|PERSISTANCE|'$datadir'|g' $CONFIGPATH'slave'$COUNTER.yaml
 
